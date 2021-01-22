@@ -7,7 +7,7 @@
 
 
 // 获取数据类型
-const getType = (value) => {
+const getType = (value: any) => {
   const type = Object.prototype.toString.call(value);
 
   return type.match(/\[object (.*)\]/)[1];
@@ -65,18 +65,4 @@ const array = [
   }
 ];
 
-// const clonedArray = cloneDeep(array);
-
-// array[0].name = 'aa';
-// clonedArray[0].age = '22';
-
-// console.log('array:', array);
-// console.log('clonedArray:', clonedArray);
-
-// console.log(cloneDeep(null));
-
-// console.log(cloneDeep(/^abc$/ig));
-
-// console.log(cloneDeep(new Date()));
-
-module.exports = cloneDeep;
+export default cloneDeep;
