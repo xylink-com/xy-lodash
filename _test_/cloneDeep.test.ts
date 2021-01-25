@@ -2,7 +2,7 @@ const cloneDeep = require('../src/cloneDeep').default;
 
 // 测试null
 test('clonedNull is null', () => {
-  const clonedNull = cloneDeep((null));
+  const clonedNull = cloneDeep(null);
 
   expect(clonedNull).toBeNull;
 });
@@ -125,6 +125,11 @@ test('test array combine with object', () => {
 
 // 测试多种数据类型
 test('test multiple data type', () => {
+  const set = new Set([{name: 'xiaoming', age: 12}, 2, 3, 4, 4]);
+  const map = new Map([
+    ['name', 'xiaoming'],
+    ['title', 'Author']
+  ]);
   const fun = () => {
     return "fun";
   };
@@ -135,6 +140,8 @@ test('test multiple data type', () => {
       new Date(2021, 1, 22),
       fun,
       Symbol('symbol'),
+      set,
+      map
     ],
     [
       'string',
@@ -163,4 +170,36 @@ test('test multiple data type', () => {
   expect(arr[0][1]).toEqual(/^123abc$/ig);
   expect(arr[1][2]).toBe(true);
   expect(arr[2][0]['object'].types[0]).toBe('function');
+  expect(clonedArr[0][5]).toEqual(set);
+  expect(clonedArr[0][6]).toEqual(map);
+});
+
+// 测试空对象、空数组
+test('test empty array and object', () => {
+  const object = {
+    arr: [],
+    obj: {}
+  };
+  const clonedObject = cloneDeep(object);
+
+  expect(clonedObject).toEqual({arr: [], obj: {}});
+});
+
+// 测试set
+test('test set type', () => {
+  const set = new Set([{name: 'xiaoming', age: 12}, 2, 3, 4, 4]);
+  const clonedSet = cloneDeep(set);
+
+  expect(clonedSet).toEqual(set);
+});
+
+// 测试map
+test('test map type', () => {
+  const map = new Map([
+    ['name', 'xiaoming'],
+    ['title', 'Author']
+  ]); 
+  const clonedMap = cloneDeep(map);
+
+  expect(clonedMap).toEqual(map);
 });
