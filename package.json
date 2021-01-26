@@ -21,7 +21,6 @@
     "@babel/core": "^7.11.6",
     "@rollup/plugin-commonjs": "^15.0.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "@types/jest": "^26.0.20",
     "dumi": "^1.0.36",
     "jest": "^26.4.2",
     "rollup": "^2.27.1",
