@@ -114,7 +114,7 @@ test('test array combine with object', () => {
     }
   ];
 
-  const clonedArr = cloneDeep((arr));
+  const clonedArr = cloneDeep(arr);
 
   arr[2].school.location = 'Shanxi';
   clonedArr[0].students[0].name = 'Li Ming';

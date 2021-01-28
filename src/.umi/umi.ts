@@ -4,8 +4,8 @@ import '@@/core/devScripts';
 import { plugin } from './core/plugin';
 import './core/pluginRegister';
 import { createHistory } from './core/history';
-import { ApplyPluginsType } from '/Users/luojinghui/work/xylink/tools/xy-toolkit/node_modules/@umijs/runtime';
-import { renderClient } from '/Users/luojinghui/work/xylink/tools/xy-toolkit/node_modules/@umijs/renderer-react/dist/index.js';
+import { ApplyPluginsType } from '/Users/chenjiaojiao/project/toolkit/node_modules/@umijs/runtime';
+import { renderClient } from '/Users/chenjiaojiao/project/toolkit/node_modules/@umijs/renderer-react/dist/index.js';
 import { getRoutes } from './core/routes';
 
 
@@ -38,7 +38,7 @@ export default clientRender();
 
 
     window.g_umi = {
-      version: '3.2.28',
+      version: '3.3.7',
     };
   
 
