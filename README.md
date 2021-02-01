@@ -23,7 +23,7 @@
 - [ ] db
 - [ ] getTime(format);
 - [ ] tranlateMoney(fixed);
-- [ ] url parms
+- [x] url parms
 - [ ] mergeDeep
 - [ ] cloneDeep
 - [ ] array/object/mat
