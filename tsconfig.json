@@ -27,5 +27,5 @@
   ],
   "include": [
     "src/**/*"
-  ]
+, "_test_/moment.test.ts"  ]
 }
