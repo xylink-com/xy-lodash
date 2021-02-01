@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType, dynamic } from '/Users/luojinghui/work/xylink/tools/xy-toolkit/node_modules/@umijs/runtime';
+import { ApplyPluginsType, dynamic } from '/Users/jonsam/Company/Projects/Components/toolkit/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 
@@ -9,7 +9,7 @@ export function getRoutes() {
   {
     "path": "/",
     "component": (props) => require('react').createElement(require('../../../node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
-      ...{"menus":{"en-US":{"*":[{"path":"/","title":"xy-lodash - React utils Library of Xylink","meta":{}}],"/pages":[{"path":"/pages/document","title":"Getting Started","meta":{"order":1}},{"path":"/pages/fscreen","title":"FullScreen","meta":{}},{"path":"/pages/store","title":"Store","meta":{}}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-lodash - React utils Library of Xylink","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/document","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/fscreen","title":"FullScreen","meta":{}},{"path":"/zh-CN/pages/store","title":"Store","meta":{}}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"title":"Document","order":1,"path":"/pages"},{"title":"GitHub","path":"https://github.com/xylink-com/xy-lodash"}],"zh-CN":[{"title":"文档","order":1,"path":"/zh-CN/pages"},{"title":"GitHub","path":"https://github.com/xylink-com/xy-lodash"}]},"title":"Toolkit","logo":"/toolkit/logo.png","mode":"site"},
+      ...{"menus":{"en-US":{"*":[{"path":"/","title":"Toolkit by xylink","meta":{}}],"/pages":[{"path":"/pages/document","title":"Getting Started","meta":{"order":1}},{"path":"/pages/fscreen","title":"FullScreen","meta":{}},{"path":"/pages/store","title":"Store","meta":{}}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-lodash - React utils Library of Xylink","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/document","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/fscreen","title":"FullScreen","meta":{}},{"path":"/zh-CN/pages/store","title":"Store","meta":{}}],"/zh-CN/time":[{"path":"/zh-CN/time","title":"Moment 时间格式化工具","meta":{}}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"title":"Document","order":1,"path":"/pages"},{"title":"GitHub","path":"https://github.com/xylink-com/xy-lodash"}],"zh-CN":[{"title":"文档","order":1,"path":"/zh-CN/pages"},{"path":"/zh-CN/time","title":"Time"},{"title":"GitHub","path":"https://github.com/xylink-com/xy-lodash"}]},"title":"Toolkit","logo":"/toolkit/logo.png","mode":"site"},
       ...props,
     }),
     "routes": [
@@ -19,8 +19,8 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/README.en-US.md",
-          "updatedTime": 1607066553000,
-          "title": "xy-lodash - React utils Library of Xylink",
+          "updatedTime": 1607073908000,
+          "title": "Toolkit by xylink",
           "hero": {
             "title": "A general tool library",
             "desc": "<div class=\"markdown\"><p>Easy to use, Easy to write</p></div>",
@@ -68,7 +68,7 @@ export function getRoutes() {
           ],
           "locale": "en-US"
         },
-        "title": "xy-lodash - React utils Library of Xylink"
+        "title": "Toolkit by xylink"
       },
       {
         "path": "/zh-CN",
@@ -76,7 +76,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/README.zh-CN.md",
-          "updatedTime": 1607066553000,
+          "updatedTime": 1607073647000,
           "title": "xy-lodash - React utils Library of Xylink",
           "hero": {
             "title": "通用工具函数库",
@@ -133,7 +133,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/document.en-US.md",
-          "updatedTime": 1607072501064,
+          "updatedTime": 1607073647000,
           "order": 1,
           "nav": {
             "title": "Document",
@@ -178,7 +178,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/document.zh-CN.md",
-          "updatedTime": 1607072380305,
+          "updatedTime": 1607073647000,
           "order": 1,
           "nav": {
             "title": "文档",
@@ -223,7 +223,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/fscreen.en-US.md",
-          "updatedTime": 1607073085943,
+          "updatedTime": 1607073647000,
           "slugs": [
             {
               "depth": 1,
@@ -281,7 +281,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/fscreen.zh-CN.md",
-          "updatedTime": 1607072970916,
+          "updatedTime": 1607073647000,
           "slugs": [
             {
               "depth": 1,
@@ -339,7 +339,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/store.en-US.md",
-          "updatedTime": 1607072026844,
+          "updatedTime": 1607073647000,
           "slugs": [
             {
               "depth": 1,
@@ -402,7 +402,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "guide/pages/store.zh-CN.md",
-          "updatedTime": 1607072031078,
+          "updatedTime": 1607073647000,
           "slugs": [
             {
               "depth": 1,
@@ -458,6 +458,54 @@ export function getRoutes() {
           }
         },
         "title": "Store"
+      },
+      {
+        "path": "/zh-CN/time",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'time__index.zh-CN.md' */'../../time/index.zh-CN.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/time/index.zh-CN.md",
+          "updatedTime": 1611579577908,
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "Moment 时间格式化工具",
+              "heading": "moment-时间格式化工具"
+            },
+            {
+              "depth": 2,
+              "value": "Using Moment",
+              "heading": "using-moment"
+            },
+            {
+              "depth": 2,
+              "value": "Parse",
+              "heading": "parse"
+            },
+            {
+              "depth": 3,
+              "value": "now",
+              "heading": "now"
+            },
+            {
+              "depth": 3,
+              "value": "current info",
+              "heading": "current-info"
+            },
+            {
+              "depth": 3,
+              "value": "format",
+              "heading": "format"
+            }
+          ],
+          "title": "Moment 时间格式化工具",
+          "locale": "zh-CN",
+          "nav": {
+            "path": "/zh-CN/time",
+            "title": "Time"
+          }
+        },
+        "title": "Moment 时间格式化工具"
       },
       {
         "path": "/pages",
