@@ -28,6 +28,7 @@
 - [ ] cloneDeep
 - [ ] array/object/mat
 - [ ] native(native-js)(android,ios)
+- [x] sign
 
 ## License
 
