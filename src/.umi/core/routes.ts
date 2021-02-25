@@ -7,6 +7,38 @@ import { plugin } from './plugin';
 export function getRoutes() {
   const routes = [
   {
+    "path": "/~demos/:uuid",
+    "layout": false,
+    "wrappers": [dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'/Users/chenjiaojiao/project/toolkit/node_modules/@umijs/preset-dumi/lib/theme/layout')})],
+    "component": (props) => {
+      const React = require('react');
+      const renderArgs = require('../../../node_modules/@umijs/preset-dumi/lib/plugins/features/demo/getDemoRenderArgs').default(props);
+
+      switch (renderArgs.length) {
+        case 1:
+          // render demo directly
+          return renderArgs[0];
+
+        case 2:
+          // render demo with previewer
+          return React.createElement(
+            require('dumi-theme-default/src/builtins/Previewer.tsx').default,
+            renderArgs[0],
+            renderArgs[1],
+          );
+
+        default:
+          return `Demo ${uuid} not found :(`;
+      }
+    }
+  },
+  {
+    "path": "/_demos/:uuid",
+    "redirect": "/~demos/:uuid"
+  },
+  {
+    "__dumiRoot": true,
+    "layout": false,
     "path": "/",
     "component": (props) => require('react').createElement(require('../../../node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
       ...{"menus":{"en-US":{"*":[{"path":"/","title":"Toolkit by xylink","meta":{}}],"/pages":[{"path":"/pages/document","title":"Getting Started","meta":{"order":1}},{"path":"/pages/fscreen","title":"FullScreen","meta":{}},{"path":"/pages/store","title":"Store","meta":{}}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-lodash - React utils Library of Xylink","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/document","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/fscreen","title":"FullScreen","meta":{}},{"path":"/zh-CN/pages/store","title":"Store","meta":{}}],"/zh-CN/time":[{"path":"/zh-CN/time","title":"Moment 时间格式化工具","meta":{}}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"title":"Document","order":1,"path":"/pages"},{"title":"GitHub","path":"https://github.com/xylink-com/xy-lodash"}],"zh-CN":[{"title":"文档","order":1,"path":"/zh-CN/pages"},{"path":"/zh-CN/time","title":"Time"},{"title":"GitHub","path":"https://github.com/xylink-com/xy-lodash"}]},"title":"Toolkit","logo":"/toolkit/logo.png","mode":"site"},
@@ -15,7 +47,7 @@ export function getRoutes() {
     "routes": [
       {
         "path": "/",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__README.en-US.md' */'../../../guide/README.en-US.md')}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__README.en-US.md' */'/Users/chenjiaojiao/project/toolkit/guide/README.en-US.md')}),
         "exact": true,
         "meta": {
           "filePath": "guide/README.en-US.md",
@@ -72,7 +104,7 @@ export function getRoutes() {
       },
       {
         "path": "/zh-CN",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__README.zh-CN.md' */'../../../guide/README.zh-CN.md')}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__README.zh-CN.md' */'/Users/chenjiaojiao/project/toolkit/guide/README.zh-CN.md')}),
         "exact": true,
         "meta": {
           "filePath": "guide/README.zh-CN.md",
@@ -128,8 +160,36 @@ export function getRoutes() {
         "title": "xy-lodash - React utils Library of Xylink"
       },
       {
+        "path": "/zh-CN/pages/clone-deep",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__cloneDeep.zh-CN.md' */'/Users/chenjiaojiao/project/toolkit/guide/pages/cloneDeep.zh-CN.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "guide/pages/cloneDeep.zh-CN.md",
+          "updatedTime": null,
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "CloneDeep",
+              "heading": "clonedeep"
+            },
+            {
+              "depth": 2,
+              "value": "例子",
+              "heading": "例子"
+            }
+          ],
+          "title": "CloneDeep",
+          "locale": "zh-CN",
+          "nav": {
+            "path": "/zh-CN/pages",
+            "title": "文档"
+          }
+        },
+        "title": "CloneDeep"
+      },
+      {
         "path": "/pages/document",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__document.en-US.md' */'../../../guide/pages/document.en-US.md')}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__document.en-US.md' */'/Users/chenjiaojiao/project/toolkit/guide/pages/document.en-US.md')}),
         "exact": true,
         "meta": {
           "filePath": "guide/pages/document.en-US.md",
@@ -174,7 +234,7 @@ export function getRoutes() {
       },
       {
         "path": "/zh-CN/pages/document",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__document.zh-CN.md' */'../../../guide/pages/document.zh-CN.md')}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__document.zh-CN.md' */'/Users/chenjiaojiao/project/toolkit/guide/pages/document.zh-CN.md')}),
         "exact": true,
         "meta": {
           "filePath": "guide/pages/document.zh-CN.md",
@@ -219,7 +279,7 @@ export function getRoutes() {
       },
       {
         "path": "/pages/fscreen",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__fscreen.en-US.md' */'../../../guide/pages/fscreen.en-US.md')}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__fscreen.en-US.md' */'/Users/chenjiaojiao/project/toolkit/guide/pages/fscreen.en-US.md')}),
         "exact": true,
         "meta": {
           "filePath": "guide/pages/fscreen.en-US.md",
@@ -277,7 +337,7 @@ export function getRoutes() {
       },
       {
         "path": "/zh-CN/pages/fscreen",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__fscreen.zh-CN.md' */'../../../guide/pages/fscreen.zh-CN.md')}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__fscreen.zh-CN.md' */'/Users/chenjiaojiao/project/toolkit/guide/pages/fscreen.zh-CN.md')}),
         "exact": true,
         "meta": {
           "filePath": "guide/pages/fscreen.zh-CN.md",
@@ -335,7 +395,7 @@ export function getRoutes() {
       },
       {
         "path": "/pages/store",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__store.en-US.md' */'../../../guide/pages/store.en-US.md')}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__store.en-US.md' */'/Users/chenjiaojiao/project/toolkit/guide/pages/store.en-US.md')}),
         "exact": true,
         "meta": {
           "filePath": "guide/pages/store.en-US.md",
@@ -398,7 +458,7 @@ export function getRoutes() {
       },
       {
         "path": "/zh-CN/pages/store",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__store.zh-CN.md' */'../../../guide/pages/store.zh-CN.md')}),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'guide__pages__store.zh-CN.md' */'/Users/chenjiaojiao/project/toolkit/guide/pages/store.zh-CN.md')}),
         "exact": true,
         "meta": {
           "filePath": "guide/pages/store.zh-CN.md",
@@ -513,18 +573,19 @@ export function getRoutes() {
           "order": 1
         },
         "exact": true,
-        "redirect": "/pages/document"
+        "redirect": "/zh-CN/pages/document"
       },
       {
-        "path": "/zh-CN/pages",
+        "path": "/pages",
         "meta": {
           "order": 1
         },
         "exact": true,
-        "redirect": "/zh-CN/pages/document"
+        "redirect": "/pages/document"
       }
     ],
-    "title": "Toolkit"
+    "title": "Toolkit",
+    "component": (props) => props.children
   }
 ];
 
