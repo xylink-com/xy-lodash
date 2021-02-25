@@ -76,6 +76,7 @@ const now = moment().format('X');
 | m | 5 | Minutes |
 | ss | 04 | Seconds with 2 digit|
 | s | 4 | Seconds |
+| ms | 57 | millSeconds |
 | ww | 1..53| Week of year |
 | ll | am..pm 上午..下午 | Locale time |
 

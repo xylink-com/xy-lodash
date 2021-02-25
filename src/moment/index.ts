@@ -304,6 +304,7 @@ export class Moment {
       m: this.minutes(date),
       ss: this.padSeconds(date),
       s: this.seconds(date),
+      ms: this.milliseconds(date),
       ww: this.weekOfYear(date),
       ll: this.localeHours(date)[1],
     };
@@ -313,7 +314,7 @@ export class Moment {
     return tpl.replace(new RegExp(`((?<=\\()${key}(?=\\)))`, "g"), r);
   }
 
-  // TOFIX 前面替换过的串可能会引入模板字符
+  // FIXED 前面替换过的串可能会引入模板字符
   // ---------- format time ---------- //
   public format(template: string): string;
   public format(template: string, date: dateType): string;
