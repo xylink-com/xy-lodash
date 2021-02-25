@@ -19,6 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/xylink-com/toolkit"
   },
+  "homepage": "https://xylink-com.github.io/toolkit/zh-cn",
   "author": "luojinghui <luojinghui@xylink.com>",
   "license": "MIT",
   "devDependencies": {
