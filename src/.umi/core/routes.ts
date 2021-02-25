@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType, dynamic } from '/Users/chenjiaojiao/project/toolkit/node_modules/@umijs/runtime';
+import { ApplyPluginsType, dynamic } from '/Users/jonsam/Company/Projects/Components/toolkit/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 
@@ -40,7 +40,10 @@ export function getRoutes() {
     "__dumiRoot": true,
     "layout": false,
     "path": "/",
-    "wrappers": [dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'/Users/chenjiaojiao/project/toolkit/node_modules/@umijs/preset-dumi/lib/theme/layout')}), dynamic({ loader: () => import(/* webpackChunkName: 'wrappers' */'/Users/chenjiaojiao/project/toolkit/node_modules/dumi-theme-default/src/layout.tsx')})],
+    "component": (props) => require('react').createElement(require('../../../node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
+      ...{"menus":{"en-US":{"*":[{"path":"/","title":"Toolkit by xylink","meta":{}}],"/pages":[{"path":"/pages/document","title":"Getting Started","meta":{"order":1}},{"path":"/pages/fscreen","title":"FullScreen","meta":{}},{"path":"/pages/store","title":"Store","meta":{}}]},"zh-CN":{"*":[{"path":"/zh-CN","title":"xy-lodash - React utils Library of Xylink","meta":{}}],"/zh-CN/pages":[{"path":"/zh-CN/pages/document","title":"快速上手","meta":{"order":1}},{"path":"/zh-CN/pages/fscreen","title":"FullScreen","meta":{}},{"path":"/zh-CN/pages/store","title":"Store","meta":{}}],"/zh-CN/time":[{"path":"/zh-CN/time","title":"Moment 时间格式化工具","meta":{}}]}},"locales":[{"name":"en-US","label":"English"},{"name":"zh-CN","label":"中文"}],"navs":{"en-US":[{"title":"Document","order":1,"path":"/pages"},{"title":"GitHub","path":"https://github.com/xylink-com/xy-lodash"}],"zh-CN":[{"title":"文档","order":1,"path":"/zh-CN/pages"},{"path":"/zh-CN/time","title":"Time"},{"title":"GitHub","path":"https://github.com/xylink-com/xy-lodash"}]},"title":"Toolkit","logo":"/toolkit/logo.png","mode":"site"},
+      ...props,
+    }),
     "routes": [
       {
         "path": "/",
@@ -517,8 +520,58 @@ export function getRoutes() {
         "title": "Store"
       },
       {
-        "path": "/zh-CN/pages",
-        "meta": {},
+        "path": "/zh-CN/time",
+        "component": dynamic({ loader: () => import(/* webpackChunkName: 'time__index.zh-CN.md' */'../../time/index.zh-CN.md')}),
+        "exact": true,
+        "meta": {
+          "filePath": "src/time/index.zh-CN.md",
+          "updatedTime": 1611579577908,
+          "slugs": [
+            {
+              "depth": 1,
+              "value": "Moment 时间格式化工具",
+              "heading": "moment-时间格式化工具"
+            },
+            {
+              "depth": 2,
+              "value": "Using Moment",
+              "heading": "using-moment"
+            },
+            {
+              "depth": 2,
+              "value": "Parse",
+              "heading": "parse"
+            },
+            {
+              "depth": 3,
+              "value": "now",
+              "heading": "now"
+            },
+            {
+              "depth": 3,
+              "value": "current info",
+              "heading": "current-info"
+            },
+            {
+              "depth": 3,
+              "value": "format",
+              "heading": "format"
+            }
+          ],
+          "title": "Moment 时间格式化工具",
+          "locale": "zh-CN",
+          "nav": {
+            "path": "/zh-CN/time",
+            "title": "Time"
+          }
+        },
+        "title": "Moment 时间格式化工具"
+      },
+      {
+        "path": "/pages",
+        "meta": {
+          "order": 1
+        },
         "exact": true,
         "redirect": "/zh-CN/pages/document"
       },
