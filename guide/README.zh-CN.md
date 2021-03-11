@@ -28,23 +28,23 @@ footer: Open-source MIT Licensed | Copyright © 2020-xylink
 - [x] broswer
 - [x] fullscreen(event)
 - [x] store
-- [ ] time
-- [ ] axios
-- [ ] httpclient
-- [ ] 节流/防抖
-- [ ] store
-- [ ] websocket
-- [ ] logger
-- [ ] timeout/interval/requestanimation
-- [ ] emmit
-- [ ] db
-- [ ] getTime(format);
-- [ ] tranlateMoney(fixed);
-- [ ] url parms
-- [ ] mergeDeep
+- [] time
+- [] axios
+- [] httpclient
+- [] 节流/防抖
+- [] store
+- [] websocket
+- [] logger
+- [] timeout/interval/requestanimation
+- [] emmit
+- [] db
+- [x] getTime(format);
+- [] tranlateMoney(fixed);
+- [x] url parms
+- [x] mergeDeep
 - [x] cloneDeep
-- [ ] array/object/mat
-- [ ] native(native-js)(android,ios)
+- [] array/object/mat
+- [x] native(native-js)(android,ios)
 
 ## License
 
