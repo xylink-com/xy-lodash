@@ -73,5 +73,5 @@ console.log("==>", EventEmitter.getListeners("app-exit"));
 
 - [ ] 添加 event 封装，并返回自定义 event
 - [ ] 添加 error 事件管理
-- [ ] 使用链表管理监听器
+- [ ] 舍弃使用 HashMap 管理监听器
 - [ ] 完善 API

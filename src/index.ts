@@ -9,6 +9,7 @@ import fscreen from "./screen";
 import store from "./store";
 import urlParam from "./urlParam";
 import cloneDeep from "./cloneDeep";
+import Socket from "./socket";
 
 export {
   getChromeVersion,
@@ -18,5 +19,6 @@ export {
   fscreen,
   store,
   urlParam,
-  cloneDeep
+  cloneDeep,
+  Socket,
 };
