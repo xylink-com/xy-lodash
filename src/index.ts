@@ -23,3 +23,4 @@ export {
 
 export * from "./eventEmitter";
 export * from "./hashMap";
+export * from "./linkedList";

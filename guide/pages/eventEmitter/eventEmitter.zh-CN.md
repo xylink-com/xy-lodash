@@ -61,7 +61,7 @@ EventEmitter.off("app-exit", handler);
 console.log("==>", EventEmitter.getListeners("app-exit"));
 ```
 
-### api 如下：
+### api 如下
 
 | API                 | 参数                                                      | 返回值      | 描述                                                                         |
 | ------------------- | --------------------------------------------------------- | ----------- | ---------------------------------------------------------------------------- |
@@ -89,7 +89,7 @@ EventEmitter
 
 ## TODO
 
+- [ ] 使用 HashMap 和 linkedList 重写监听器
 - [ ] 添加 event 封装，并返回自定义 event
 - [ ] 添加 error 事件管理
-- [ ] 使用 HashMap 和 linkedList 管理监听器
 - [ ] 完善 API
