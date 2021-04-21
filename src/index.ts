@@ -20,6 +20,7 @@ export {
   urlParam,
   cloneDeep,
 };
-export {default as Example} from "./example";
-export {default as Example} from "./example";
-export {default as Axios} from "./axios";
+
+export * from "./eventEmitter";
+export * from "./hashMap";
+export * from "./linkedList";
