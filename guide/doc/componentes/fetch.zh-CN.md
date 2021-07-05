@@ -1,4 +1,12 @@
-# Fetch 
+---
+order: 2
+title: Fetch
+group:
+  title: 组件
+  order: 3
+---
+
+# Fetch
 
 类 Axios API 的网络请求工具。
 
@@ -13,7 +21,6 @@
 - [ ] 自动转换 JSON 数据
 - [ ] 客户端支持防御 XSRF
 
-
 ## Browser Support
 
 - Chrome
@@ -25,6 +32,6 @@ Note: modern browsers such as Chrome, Firefox, Microsoft Edge, and Safari contai
 
 ## Links
 
-- [Introduction to fetch API](https://developers.google.com/web/updates/2015/03/introduction-to-fetch#:~:text=fetch()%20allows%20you%20to,the%20complex%20API%20of%20XMLHttpRequest.)
+- [Introduction to fetch API](<https://developers.google.com/web/updates/2015/03/introduction-to-fetch#:~:text=fetch()%20allows%20you%20to,the%20complex%20API%20of%20XMLHttpRequest.>)
 - [Fetch API - MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API)
 - [使用 Fetch - MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)

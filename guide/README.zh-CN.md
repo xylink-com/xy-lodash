@@ -5,7 +5,7 @@ hero:
   desc: 为项目而生，拒绝做代码搬运工
   actions:
     - text: 快速开始
-      link: /zh-CN/pages/document
+      link: /doc/start
 features:
   - icon: https://gw.alipayobjects.com/zos/bmw-prod/813f5ed9-6bc4-43d4-9f74-ec81ecf35733/k7htg6n4_w144_h144.png
     title: 可靠

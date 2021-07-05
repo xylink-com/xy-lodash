@@ -1,3 +1,11 @@
+---
+order: 2
+title: Native
+group:
+  title: 组件
+  order: 6
+---
+
 # Native js 调原生方法模块
 
 通过方法的封装方便快捷的管理 js 与原生部分（android, ios）方法的连通，舍弃手动写代码注册的方法，通过方法自动生成注册减少冗余代码，满足通用方法的使用需求。
@@ -5,8 +13,8 @@
 ## 使用
 
 ```ts
-import Native from "toolkit";
-Native.setTitle("hello");
+import Native from 'toolkit';
+Native.setTitle('hello');
 ```
 
 Native 以实例的方法导出，在项目中维持单例模式。
@@ -39,4 +47,3 @@ object: 对方法进行详细的配置。
 | customAndroidCallback | 自定义 android 的处理方法 | () => string |
 | customIosCallback     | 自定义 ios 的处理方法     | () => string |
 | customErrorHandler    | 自定义 error 的处理方法   | () => string |
-

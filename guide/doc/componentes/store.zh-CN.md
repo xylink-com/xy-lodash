@@ -1,9 +1,10 @@
-<!-- ---
+---
 order: 2
-nav:
-  title: 文档3
-  order: 2
---- -->
+title: Store
+group:
+  title: 组件
+  order: 8
+---
 
 # Store
 
@@ -12,9 +13,9 @@ store 是一个 浏览器存储工具函数，是通过浏览器自带的 Locals
 ## 例子
 
 ```ts
-import { store } from "@xylink/toolkit";
+import { store } from '@xylink/toolkit';
 
-const result = store.get("key");
+const result = store.get('key');
 ```
 
 ## API
@@ -23,7 +24,7 @@ const result = store.get("key");
 
 #### 1. get(key)
 
-通过key获取localstorage里面的值。
+通过 key 获取 localstorage 里面的值。
 
 ```ts
 store.get(key: string): any;

@@ -1,3 +1,11 @@
+---
+order: 2
+title: EventEmitter
+group:
+  title: 组件
+  order: 2
+---
+
 # EventEmitter 事件管理器
 
 EventEmitter 是使用 Map 和 Set 实现的简易版的事件管理器，API 与 node.js EventEmitter 风格基本一致。
@@ -7,25 +15,25 @@ EventEmitter 是使用 Map 和 Set 实现的简易版的事件管理器，API �
 ## 使用
 
 ```ts
-import {EventEmitter} from "toolkit";
+import { EventEmitter } from 'toolkit';
 
 const handler = (data) => {
-  console.log("==>app min", { data });
+  console.log('==>app min', { data });
 };
-EventEmitter.on("app-min", handler);
+EventEmitter.on('app-min', handler);
 const offListener = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      EventEmitter.off("app-min", handler);
+      EventEmitter.off('app-min', handler);
       resolve(true);
     }, 3000);
   });
 };
 offListener().then(() => {
-  EventEmitter.emit("app-min", { min: true });
+  EventEmitter.emit('app-min', { min: true });
 });
-EventEmitter.emit("app-min", { min: false });
-console.log("==> max listeners size: ", EventEmitter.getMaxListeners());
+EventEmitter.emit('app-min', { min: false });
+console.log('==> max listeners size: ', EventEmitter.getMaxListeners());
 ```
 
 ## Event 事件
@@ -38,18 +46,18 @@ console.log("==> max listeners size: ", EventEmitter.getMaxListeners());
 使用示例：
 
 ```ts
-EventEmitter.on("newListener", (data) => {
-  console.log("==>newListener", JSON.stringify(data));
+EventEmitter.on('newListener', (data) => {
+  console.log('==>newListener', JSON.stringify(data));
 });
-EventEmitter.on("removeListener", (data) => {
-  console.log("==>removeListener", data);
+EventEmitter.on('removeListener', (data) => {
+  console.log('==>removeListener', data);
 });
-const handler = () => console.log("==>app-exit", 2);
-EventEmitter.on("app-quit", () => console.log("==>app-quit", 1));
-EventEmitter.on("app-exit", handler);
-console.log("==>", EventEmitter.getListeners("app-exit"));
-EventEmitter.off("app-exit", handler);
-console.log("==>", EventEmitter.getListeners("app-exit"));
+const handler = () => console.log('==>app-exit', 2);
+EventEmitter.on('app-quit', () => console.log('==>app-quit', 1));
+EventEmitter.on('app-exit', handler);
+console.log('==>', EventEmitter.getListeners('app-exit'));
+EventEmitter.off('app-exit', handler);
+console.log('==>', EventEmitter.getListeners('app-exit'));
 ```
 
 ## API

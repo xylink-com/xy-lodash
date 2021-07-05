@@ -4,7 +4,7 @@
  * @author jinghui-Luo
  *
  * Created at     : 2020-12-04 15:37:02
- * Last modified  : 2021-07-05 13:31:05
+ * Last modified  : 2021-07-05 16:22:30
  */
 
 const browser = function () {
@@ -59,9 +59,23 @@ const browser = function () {
   return result;
 };
 
+/**
+ * 浏览器元素全屏展示库
+ *
+ * @class { IFScreen } FScreen 全屏类
+ */
 class FScreen {
+  /**
+   * 浏览器兼容全屏API对象
+   */
   browser: any;
+  /**
+   * 所有需要全屏展示的元素Map列表
+   */
   eles: any;
+  /**
+   * 是否初始化
+   */
   isInit: boolean;
 
   constructor() {
@@ -72,23 +86,32 @@ class FScreen {
     this.fullscreenChangeCallback = this.fullscreenChangeCallback.bind(this);
   }
 
-  public is() {
-    return Boolean(document[this.browser.fullscreenElement]);
-  }
-
+  /**
+   * 获取当前全屏元素
+   *
+   * @public
+   * @returns 全屏元素
+   */
   public ele() {
     return document[this.browser.fullscreenElement];
   }
 
+  /**
+   * 获取所有全屏元素对象
+   *
+   * @public
+   * @returns 全屏元素对象数据
+   */
   public getEles() {
     return this.eles;
   }
 
   /**
-   * config fscreen params
+   * 初始化配置全屏参数
    *
-   * @param ele request full screen'ele
-   * @param cb ele status change callback function
+   * @public
+   * @param ele 请求全屏的元素
+   * @param cb 元素全屏状态回调事件
    */
   public init(ele: any, cb?: (status: any) => void) {
     this.eles.set(ele, { ele, cb, isFullScreen: false });
@@ -98,7 +121,13 @@ class FScreen {
     }
   }
 
-  private fullscreenChangeCallback(e) {
+  /**
+   * 全屏状态变化回调事件
+   *
+   * @private
+   * @param { any } e 回调状态数据
+   */
+  private fullscreenChangeCallback(e: any) {
     const fullscreenEle = this.ele();
     const currentEle = e.target;
 
@@ -133,13 +162,25 @@ class FScreen {
     }
   }
 
+  /**
+   * 初始化document全屏监听事件
+   *
+   * @private
+   */
   private initEventListener() {
     document.addEventListener(
       this.browser.fullscreenchange,
       this.fullscreenChangeCallback
     );
+
+    this.isInit = true;
   }
 
+  /**
+   * 移除document全屏监听事件
+   *
+   * @private
+   */
   private removeEventListener() {
     document.removeEventListener(
       this.browser.fullscreenchange,
@@ -147,6 +188,12 @@ class FScreen {
     );
   }
 
+  /**
+   * 清理全屏元素和事件
+   *
+   * @public
+   * @param ele 需要退出全屏的元素
+   */
   public clear(ele: any) {
     if (this.eles.has(ele)) {
       const eleObj = this.eles.get(ele);
@@ -163,6 +210,9 @@ class FScreen {
     }
   }
 
+  /**
+   * 清理全屏元素和事件
+   */
   public clearAll() {
     this.removeEventListener();
 
@@ -170,6 +220,12 @@ class FScreen {
     this.isInit = false;
   }
 
+  /**
+   * 将元素进行全屏展示
+   *
+   * @public
+   * @param { HTMLElement } ele 需要全屏的元素
+   */
   public request(ele: any) {
     if (this.eles.has(ele)) {
       const eleObj = this.eles.get(ele);
@@ -182,6 +238,12 @@ class FScreen {
     }
   }
 
+  /**
+   * 退出全屏显示
+   *
+   * @public
+   * @param { HTMLElement } ele 需要退出全屏的元素
+   */
   public exit(ele: any) {
     if (this.eles.has(ele)) {
       document[this.browser.exitFullscreen]();

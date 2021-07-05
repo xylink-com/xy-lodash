@@ -2,7 +2,7 @@
  * XY Tookit库总入口
  *
  * Created at     : 2021-07-05 12:07:23
- * Last modified  : 2021-07-05 13:30:44
+ * Last modified  : 2021-07-05 16:48:06
  */
 
 /**
@@ -36,3 +36,5 @@ export { urlParam } from './urlParam';
  * 深度克隆引用型数据
  */
 export { cloneDeep } from './cloneDeep';
+
+export * from './type';
