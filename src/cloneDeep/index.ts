@@ -1,8 +1,8 @@
-/** 
+/**
  * @author chenjiaojiao
- * 
+ *
  * Created at     : 2021-01-21 18:45:42
- * Last modified  : 2021-01-22 18:21:38
+ * Last modified  : 2021-07-05 13:29:51
  */
 
 // 获取数据类型
@@ -10,7 +10,7 @@ const getType = (value) => {
   const type = Object.prototype.toString.call(value);
 
   return type.match(/\[object (.*)\]/)[1];
-}
+};
 
 const getObj = (value) => {
   if (getType(value) === 'Array') {
@@ -35,10 +35,10 @@ const cloneDeep = (value) => {
     }
     if (value === null) {
       return value;
-    } 
+    }
     if (getType(value) === 'RegExp') {
       return value;
-    } 
+    }
     if (getType(value) === 'Date') {
       return value;
     }
@@ -46,46 +46,46 @@ const cloneDeep = (value) => {
     const length = clonedObjs.length;
     const obj = getObj(value);
 
-    for (let i = 0 ; i < length; i++) {
+    for (let i = 0; i < length; i++) {
       if (clonedObjs[i].value === value) {
         return clonedObjs[i].copyTarget;
       }
     }
-    
-    clonedObjs.push({value, copyTarget: obj});
+
+    clonedObjs.push({ value, copyTarget: obj });
 
     if (getType(value) === 'Set') {
-      value.forEach(key => {   
+      value.forEach((key) => {
         // @ts-ignore
-        obj.add(key)
+        obj.add(key);
       });
     } else if (getType(value) === 'Map') {
-      value.forEach((value, key) => {   
+      value.forEach((value, key) => {
         // @ts-ignore
         obj.set(key, value);
       });
     } else {
       // Object.keys: 返回一个数组，包括对象自身的所有可枚举属性（不含Symbol属性）的键名
-      Object.keys(value).forEach(key => { 
-        if (obj[key]) { 
-          return; 
-        } 
+      Object.keys(value).forEach((key) => {
+        if (obj[key]) {
+          return;
+        }
         obj[key] = baseClone(value[key]);
       });
 
       // Object.getOwnPropertySymbols: 返回一个数组，包含对象自身的所有Symbol属性的键名
-      Object.getOwnPropertySymbols(value).forEach(key => {
+      Object.getOwnPropertySymbols(value).forEach((key) => {
         if (obj[key]) {
           return;
         }
         obj[key] = baseClone(value[key]);
       });
     }
-  
+
     return obj;
   };
-  
+
   return baseClone(value);
 };
 
-export default cloneDeep;
+export { cloneDeep };

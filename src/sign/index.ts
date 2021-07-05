@@ -4,28 +4,28 @@
  * @author phoebe
  *
  * Created at     : 2021-01-22 15:18:31
- * Last modified  : 2021-01-22 17:44:00
+ * Last modified  : 2021-07-05 13:22:00
  */
 
-import CryptoJS from "crypto-js";
+import CryptoJS from 'crypto-js';
 
 interface ISign {
-  method: "GET" | "POST" | "DELETE" | "PUT";
+  method: 'GET' | 'POST' | 'DELETE' | 'PUT';
   url: string; // 请求url,包含query参数
   token: string; // sdk token
   body: string; // 请求体
 }
 
 const getSign = (props: ISign): string => {
-  let { method, url, token, body = "" } = props;
+  let { method, url, token, body = '' } = props;
 
-  const matchUrl = url.split("?")[0].match(/v\d+(\S*)/);
+  const matchUrl = url.split('?')[0].match(/v\d+(\S*)/);
 
   const newUrl = matchUrl ? matchUrl[1].substr(1) : url;
 
-  const urlPath = newUrl.split("?")[0];
+  const urlPath = newUrl.split('?')[0];
 
-  const paramsStr = paramsSort(url.split("?")[1]);
+  const paramsStr = paramsSort(url.split('?')[1]);
 
   const signature = computeSignature({
     method: method.toUpperCase(),
@@ -41,9 +41,9 @@ const getSign = (props: ISign): string => {
 const serialize = function (value: any) {
   if (!value) return;
 
-  let val = "";
+  let val = '';
   const type = Object.prototype.toString.call(value);
-  if (type === "[object Object]" || type === "[object Array]") {
+  if (type === '[object Object]' || type === '[object Array]') {
     val = JSON.stringify(value);
   } else {
     val = value;
@@ -55,15 +55,15 @@ const serialize = function (value: any) {
 // 参数根据字典进行排序
 function paramsSort(params: string) {
   if (!params) {
-    return "";
+    return '';
   }
 
-  let newParams = "";
-  let paramsKeys: any[] = params.split("&").sort();
+  let newParams = '';
+  let paramsKeys: any[] = params.split('&').sort();
 
   paramsKeys = paramsKeys
     .map((key) => {
-      if (key.indexOf("signature") < 0) {
+      if (key.indexOf('signature') < 0) {
         return key;
       }
       return false;
@@ -105,10 +105,10 @@ function stringToByte(str: string) {
 
 // 字节转字符串
 function byteToString(arr) {
-  if (typeof arr === "string") {
+  if (typeof arr === 'string') {
     return arr;
   }
-  var str = "",
+  var str = '',
     _arr = arr;
   for (var i = 0; i < _arr.length; i++) {
     var one = _arr[i].toString(2),
@@ -131,7 +131,7 @@ function byteToString(arr) {
 //  计算websocket签名
 function computeSignature(data) {
   // console.log("computeSignature::::", data);
-  const { method = "GET", url, paramsStr, sdkToken, body = "" } = data;
+  const { method = 'GET', url, paramsStr, sdkToken, body = '' } = data;
   const bodyTemp = stringToByte(body);
   if (bodyTemp.length > 100) {
     bodyTemp.length = 100;

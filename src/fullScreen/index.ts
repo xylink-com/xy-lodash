@@ -1,43 +1,42 @@
 /**
- * 全屏函数库
+ * 全屏函数库，支持事件、方法、和多个元素同时调用全屏API
  *
- * @summary fullscreen lib
  * @author jinghui-Luo
  *
  * Created at     : 2020-12-04 15:37:02
- * Last modified  : 2020-12-04 17:04:39
+ * Last modified  : 2021-07-05 13:31:05
  */
 
 const browser = function () {
   const browserList = [
     [
-      "requestFullscreen",
-      "exitFullscreen",
-      "fullscreenElement",
-      "fullscreenchange",
-      "fullscreenEnabled",
+      'requestFullscreen',
+      'exitFullscreen',
+      'fullscreenElement',
+      'fullscreenchange',
+      'fullscreenEnabled',
     ],
     [
-      "webkitRequestFullscreen",
-      "webkitExitFullscreen",
-      "webkitFullscreenElement",
-      "webkitfullscreenchange",
-      "webkitFullscreenEnabled",
-      "webkitCancelFullScreen",
+      'webkitRequestFullscreen',
+      'webkitExitFullscreen',
+      'webkitFullscreenElement',
+      'webkitfullscreenchange',
+      'webkitFullscreenEnabled',
+      'webkitCancelFullScreen',
     ],
     [
-      "mozRequestFullScreen",
-      "mozCancelFullScreen",
-      "mozFullScreenElement",
-      "mozfullscreenchange",
-      "mozFullScreenEnabled",
+      'mozRequestFullScreen',
+      'mozCancelFullScreen',
+      'mozFullScreenElement',
+      'mozfullscreenchange',
+      'mozFullScreenEnabled',
     ],
     [
-      "msRequestFullscreen",
-      "msExitFullscreen",
-      "msFullscreenElement",
-      "MSFullscreenChange",
-      "msFullscreenEnabled",
+      'msRequestFullscreen',
+      'msExitFullscreen',
+      'msFullscreenElement',
+      'MSFullscreenChange',
+      'msFullscreenEnabled',
     ],
   ];
 
@@ -192,4 +191,4 @@ class FScreen {
 
 const fscreen = new FScreen();
 
-export default fscreen;
+export { fscreen };
